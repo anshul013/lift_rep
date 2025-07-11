@@ -44,6 +44,7 @@ parser.add_argument('--compile', action='store_true', default=False, help='Compi
 parser.add_argument('--reduce_bs', type=str_to_bool, default=False, help='Override batch_size in hyperparams by setting.py')
 parser.add_argument('--normalization', type=str, default=None)
 parser.add_argument('--checkpoints', type=str, default='./checkpoints/', help='location of model checkpoints')
+parser.add_argument('--border_type', type=str, default=None, help='border type for data')
 
 # data loader
 parser.add_argument('--root_path', type=str, default='./dataset/', help='root path of the data file')
