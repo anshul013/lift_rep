@@ -18,6 +18,8 @@ data_settings = {
     'Exchange': {'data': 'exchange_rate.csv', 'T':'OT', 'M':[8,8], 'prefetch_batch_size': 128},
     'exchange_rate': {'data': 'exchange_rate.csv', 'T':'OT', 'M':[8,8], 'prefetch_batch_size': 128},
     'Illness': {'data': 'illness.csv', 'T':'OT', 'M':[7,7], 'prefetch_batch_size': 128},
+    'CellCycle': {'data': 'CellCycle.csv', 'T':'OT', 'M':[6,6], 'S':[1,1], 'MS':[6,1], 'prefetch_batch_size': 128},
+    'Lorenz': {'data': 'Lorenz.csv', 'T':'OT', 'M':[3,3], 'S':[1,1], 'MS':[3,1], 'prefetch_batch_size': 128}
 }
 
 
@@ -137,6 +139,8 @@ def pretrain_lr(model, dataset, H, lr):
         if dataset in ['PeMSD8', 'Solar']:
             return 0.001
         return 0.0001
+    if model == 'TSMixer':
+        return 0.00048
     if model == 'Crossformer':
         if dataset in ['ECL']:
             return 0.005
